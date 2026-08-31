@@ -3,7 +3,7 @@ import AuthorList from "@/views/author/AuthorList.vue";
 import AuthorLogin from "@/views/author/AuthorLogin.vue";
 
 
-export const memberRouter = [
+export const authorRouter = [
     {
         path: "/author/create",
         name: "AuthorCreate",

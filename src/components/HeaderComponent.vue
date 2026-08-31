@@ -6,9 +6,9 @@
                     <v-btn :to="'/'" >게시판</v-btn>
                 </v-col>
                 <v-col class="d-flex justify-end">
-                    <v-btn :to="'/member/list'">회원관리</v-btn>
-                    <v-btn v-if="!isLogined" :to="'/member/create'">회원가입</v-btn>
-                    <v-btn v-if="!isLogined" :to="'/member/login'">로그인</v-btn>
+                    <v-btn :to="'/author/list'">회원관리</v-btn>
+                    <v-btn v-if="!isLogined" :to="'/author/create'">회원가입</v-btn>
+                    <v-btn v-if="!isLogined" :to="'/author/login'">로그인</v-btn>
                     <v-btn v-if="isLogined" @click="doLogout()">로그아웃</v-btn>
                 </v-col>
             </v-row>
@@ -16,8 +16,8 @@
     </v-app-bar>
 </template>
 <script>
-import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
+
     export default{
         data(){
             return{
