@@ -46,11 +46,9 @@ export default{
         async authorLogin(){
             try{
                 const data = {email:this.email, password:this.password};
-                const result = await axios.post(`${process.env.VUE_APP_API_BASE_URL}/author/doLogin`, data);
-                const accessToken = result.data.accessToken;
-                const refreshToken = result.data.refreshToken;
+                const result = await axios.post(`${process.env.VUE_APP_API_BASE_URL}/author/login`, data);
+                const accessToken = result.data;
                 localStorage.setItem("accessToken", accessToken);
-                localStorage.setItem("refreshToken", refreshToken);
                 window.location.href = "/";
             }catch(e){
                 console.log(e)

@@ -10,7 +10,7 @@
                         <v-table>
                             <thead>
                                 <tr>
-                                    <th>ID</th><th>이름</th><th>이메일</th><th>상세보기</th>
+                                    <th>ID</th><th>이름</th><th>이메일</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,12 +37,9 @@ export default{
         }
     },
     async created(){
-        try{
-            const result = await axios.get(`${process.env.VUE_APP_API_BASE_URL}/author/list`);
-            this.authorList = result.data;
-        }catch(e){
-            console.log(e);
+        const accessToken = localStorage.getItem("accessToken");
+        const result = await axios.get(`${process.env.VUE_APP_API_BASE_URL}/author/list`,{headers: {Authorization: `Bearer ${accessToken}`} });
+        this.authorList = result.data;
         }
-    }
 }
 </script>
