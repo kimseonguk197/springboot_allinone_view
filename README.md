@@ -1,4 +1,4 @@
-# ordersystem-front
+# front
 
 ## Project setup
 ```
