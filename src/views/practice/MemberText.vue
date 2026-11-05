@@ -20,7 +20,7 @@ export default{
         }
     },
     async created(){
-        const result = await axios.get("http://localhost:8080/member/text");
+        const result = await axios.get("http://localhost:8080/member/text-data");
         this.textData = result.data;
     }
 }
