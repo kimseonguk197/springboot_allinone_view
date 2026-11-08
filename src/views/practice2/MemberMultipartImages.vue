@@ -39,7 +39,7 @@ export default{
             for(let i=0; i<this.profileImages.length; i++){
                 serverData.append('profileImages', this.profileImages[i]);
             }
-            await axios.post("http://localhost:8080/member1/multipart-formdata-images", serverData);
+            await axios.post("http://localhost:8080/member/multipart-formdata-images", serverData);
         }
     }
 }
