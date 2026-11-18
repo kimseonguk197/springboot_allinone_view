@@ -37,7 +37,7 @@ export default{
             const file = Array.isArray(this.profileImage) ? this.profileImage[0] : this.profileImage;
             const serverData = new FormData();
             // js에서 Blob함수는 데이터형을 지정/변환할 때 사용
-            serverData.append('member1', new Blob([memberJson], {type:"application/json"}));
+            serverData.append('member', new Blob([memberJson], {type:"application/json"}));
             serverData.append('profileImage', file);
             await axios.post("http://localhost:8080/member/json-file", serverData);
         }
